@@ -1,0 +1,26 @@
+{% extends 'news/layout.html'%}
+{% load static %}
+{% block title%}News{% endblock %}
+{% block static %}
+<link rel="stylesheet" href="{% static 'news/css/item.css' %}">
+{% endblock%}
+{% block content %}
+    <div style="background: url({{news.image.url}});background-repeat: space;background-position: center;background-size: cover;min-height: 1000px;"
+    >
+        <div class="list">
+            <div class="top">
+            <img style="width: 300px; height: auto" src="{{ news.image.url}}"/>
+            <div class="content">
+                <a class="title">{{news.title}}</a>
+                <a class="body">{{news.content}}</a>
+            </div>
+        </div>
+        <div>
+            <a class="author">{{news.author}}</a>
+            <a class="date_published">{{news.date_published}}</a>
+        </div>
+        </div>
+
+
+    </div>
+{% endblock %}

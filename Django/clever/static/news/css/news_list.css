@@ -1,0 +1,50 @@
+.blog{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    margin: 100px;
+    padding: 40px;
+    border:3px solid rgba(213, 164, 26, 0.29);
+    border-radius: 24px;
+    font-size: 34px;
+}
+.blog:hover{
+    animation-duration: 3s;
+  animation-name: slidein;
+    padding: 80px;
+    border:3px solid rgba(255, 0, 0, 0.26);
+
+}
+.content{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 7px;
+    max-width: 300px;
+}
+
+.list{
+    /*margin:200px;*/
+}
+.title{
+   text-decoration: none;
+    color:black;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 14px;
+    border-radius: 20px;
+    max-width: 430px;
+}
+
+
+@keyframes slidein {
+  from {
+    padding: 40px;
+      border:3px solid rgba(213, 164, 26, 0.29);
+  }
+
+  to {
+  padding: 80px;
+      border:3px solid rgba(255, 0, 0, 0.26);
+  }
+
+}

@@ -1,0 +1,20 @@
+{% extends 'news/layout.html'%}
+{% load static %}
+{% block title%}News{% endblock %}
+{% block static %}
+<link rel="stylesheet" href="{% static 'news/css/news_list.css' %}">
+{% endblock%}
+{% block content %}
+    <div class="list">
+        {% for new in news %}
+            <div class="blog"
+                 style="background: url({{new.image.url}});background-repeat: no-repeat;background-position: center;background-size: cover">
+                <a class="title" href="{{new.get_absolute_url}}">{{new.title}}</a>
+                <div class="content">
+                    <a>{{new.author}}</a>
+                    <a>{{new.date_published}}</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
