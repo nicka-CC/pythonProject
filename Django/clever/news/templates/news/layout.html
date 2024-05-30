@@ -17,7 +17,7 @@
         <div class="left_side">
             <a class="btn btn-warning" href="{% url 'news:index' %}">Главная страница</a>
             <a class="btn btn-warning">Контанты</a>
-            <a class="font-size: 35;text-decoration:none;color:black;">Заголовок</a>
+            <a class="font-size: 35;text-decoration:none;color:black;">{{title}}</a>
         </div>
         <div class="right_side">
             {% if user.is_authenticated %}
