@@ -16,3 +16,13 @@ class News(models.Model):
 
     def get_absolute_url(self):
         return reverse("news:news_item", kwargs={"pk": self.pk})
+class Comments(models.Model):
+    news = models.ForeignKey(News, on_delete=models.CASCADE, verbose_name="Новости")
+    author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="Автор", null=True, blank=True)
+    text = models.TextField(verbose_name="Содержание")
+    date_published=models.DateTimeField(default=timezone.now, verbose_name="Дата публикации")
+    def __str__(self):
+        return str(self.text)
+    class Meta:
+        verbose_name = "Комментарий"
+        verbose_name_plural="Комментарии"
